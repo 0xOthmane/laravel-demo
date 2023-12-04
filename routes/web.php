@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/hello/{name}', [HelloController::class, 'hello']);
+Route::post('/hello/{name}', [HelloController::class, 'doHello']);
