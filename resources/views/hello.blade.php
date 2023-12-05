@@ -3,6 +3,11 @@
 @section('body')
 Bonjour {{ strtoupper($name) }}
 
+@foreach($posts as $post)
+<h1>{{ $post->title }}</h1>
+<span>{{ $post->content }}</span>
+@endforeach
+
 <form action="" method="post">
     @csrf
     <div>
