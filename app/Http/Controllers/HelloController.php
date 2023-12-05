@@ -25,6 +25,7 @@ class HelloController extends Controller
         $post->slug = 'slug';
         $post->save();
         $post->delete();
+        $posts = Post::query()->with('categroy')->get(); // Pour éviter les multiples requêtes
         return view('hello', [
             'name'=> $name, 
             'posts'=> $posts
