@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HelloController extends Controller
 {
     public function hello(Request $request, string $name){
+        
+        // $this->authorize('update', $post);
+        $this->authorize('view', Post::first());
         // Post::create(
         //     ['title'=> 'Title',
         //     'slug'=> 'article',
